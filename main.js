@@ -300,11 +300,11 @@ function drawLayer(numNodes, radius, activations, xPos, canvasHeight, layerNum){
 			let bias = net.biases[layerNum - 1][nodeNum];
 			if(bias > 0){
 				node.stroke = '#FDDA0D';
-				node.linewidth = 2 * bias;
+				node.linewidth = 20 * bias;
 			}else if(bias == 0){
 				node.noStroke();
 			}else{
-				node.linewidth = 2 * Math.abs(bias);
+				node.linewidth = 20 * Math.abs(bias);
 			}
 		}else{
 			node.linewidth = 1;
@@ -362,11 +362,11 @@ function updateNodes(){
 				let bias = net.biases[layer - 1][nodeNum];
 				if(bias > 0){
 					node.stroke = '#FDDA0D';
-					node.linewidth = 2 * bias;
+					node.linewidth = 20 * bias;
 				}else if(bias == 0){
 					node.noStroke();
 				}else{
-					node.linewidth = 2 * Math.abs(bias);
+					node.linewidth = 20 * Math.abs(bias);
 				}
 			}
 			newNodes[layer].push(node);
@@ -730,31 +730,3 @@ $("#speedUp").click(function(){
 $("#slowDown").click(function(){
 	speed += 100;
 });
-
-async function SGD(lastEpoch, dataIndex){
-	for(let epoch = lastEpoch; epoch < epochs; epoch++){
-		let epochText = "Epoch: " + epoch;
-		$('#epoch').text(epochText);
-		setLastEpoch(epoch);
-		if(epoch != lastEpoch){
-			dataIndex = 0;
-		}
-		for(let i = dataIndex; i < data[0].length; i += miniBatchSize){
-			setDataIndex(i);
-			if (playing){
-				await new Promise((resolve) => {setTimeout(function(){net.updateMiniBatch(trainingData.slice(i, i + miniBatchSize), learningRate, costGradientBiases, costGradientWeights); resolve();}, speed);});
-				await new Promise((resolve) => {updateNodes(); updateEdges(); resolve();});	
-			} else {
-				return null;
-			}
-		}
-		console.log('passed');
-		let correctCategorizations = net.evaluate(data[1]);
-
-		let accuracy = correctCategorizations/data[1].length;
-		$('#accuracy').text("Accuracy = " + correctCategorizations + "/" + data[1].length + " = " + accuracy);
-
-		//console.log("Epoch " + epoch + ": " + correctCategorizations + "/" + data[1].length);
-	}
-	console.log(net.nodes[1][0].linewidth);
-}
