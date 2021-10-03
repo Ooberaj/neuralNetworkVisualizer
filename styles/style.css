@@ -1,0 +1,50 @@
+.container.custom-container{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.custom-btn{
+  margin-right: 5px;
+  line-height: 1.2em
+}
+
+#topBar{
+  margin-top: 10px;
+}
+
+.inline{
+  display: inline-block;
+  margin-left: 5px;
+}
+
+body{
+  color: #444444;
+  line-height: normal;
+}
+
+.center {
+  margin: auto;
+}
+
+#title{
+  display: inline-block;
+  margin-right: 0.5em;
+  margin-bottom: 1em;
+}
+
+.popoverButton{
+  margin-right: 5px;
+  display: inline-block;
+  line-height: 1rem;
+  font-size: 1rem;
+  vertical-align: text-bottom;
+}
+
+#inputLayerRange{
+  display: inline-block;
+  line-height: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: .375rem .75rem;
+}
+
