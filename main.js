@@ -300,11 +300,11 @@ function drawLayer(numNodes, radius, activations, xPos, canvasHeight, layerNum){
 			let bias = net.biases[layerNum - 1][nodeNum];
 			if(bias > 0){
 				node.stroke = '#FDDA0D';
-				node.linewidth = 20 * bias;
+				node.linewidth = 2 * bias;
 			}else if(bias == 0){
 				node.noStroke();
 			}else{
-				node.linewidth = 20 * Math.abs(bias);
+				node.linewidth = 2 * Math.abs(bias);
 			}
 		}else{
 			node.linewidth = 1;
@@ -362,11 +362,11 @@ function updateNodes(){
 				let bias = net.biases[layer - 1][nodeNum];
 				if(bias > 0){
 					node.stroke = '#FDDA0D';
-					node.linewidth = 20 * bias;
+					node.linewidth = 2 * bias;
 				}else if(bias == 0){
 					node.noStroke();
 				}else{
-					node.linewidth = 20 * Math.abs(bias);
+					node.linewidth = 2 * Math.abs(bias);
 				}
 			}
 			newNodes[layer].push(node);
