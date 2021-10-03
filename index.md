@@ -20,23 +20,23 @@
       <div id="topBar">
         <h1 id="title">Neural Network Visualization</h1>
         <button class="btn btn-info popoverButton" type="button" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="focus" data-bs-html='true' data-bs-content="
-        <p>Edge Color: A positive weight is represented by a <span style='color: #50C878;'>green edge</span> while a negative weight is represented by a <span style='color: #D2042D;'>red edge</span>.
-        <p>Edge Thickness: As positive weights increase and negative weights decrease, edge <b>thickness</b> increases. 
-        <p>Node Border Color: <span style='color: #FDDA0D;'>Yellow border</span> represents the node's negative bias while a black border represents positive bias.
-        <p>Node Border Thickness: As positive biases increase and negative biases decrease, border <b>thickness</b> increases.
-        <p>Node Color: As a node's activation value decreases, its <span style='color: #d3d3d3;'>lightness</span> increases.">Legend</button>
+        <p class='display'>Edge Color: A positive weight is represented by a <span style='color: #50C878;'>green edge</span> while a negative weight is represented by a <span style='color: #D2042D;'>red edge</span>.
+        <p class='display'>Edge Thickness: As positive weights increase and negative weights decrease, edge <b>thickness</b> increases. 
+        <p class='display'>Node Border Color: <span style='color: #FDDA0D;'>Yellow border</span> represents the node's negative bias while a black border represents positive bias.
+        <p class='display'>Node Border Thickness: As positive biases increase and negative biases decrease, border <b>thickness</b> increases.
+        <p class='display'>Node Color: As a node's activation value decreases, its <span style='color: #d3d3d3;'>lightness</span> increases.">Legend</button>
         <button class="btn btn-info popoverButton" type="button" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="focus" data-bs-html='true' data-bs-content="
-        <p>The neural network is trained on the MNIST dataset to recognize hand-written digits. The network has 784 input neurons with activations loaded from 28x28 images, 30 neurons in 1 hidden layer, and 10 output neurons representing numbers 0 through 9.
-        <p>As the visualization is ran, the training process is displayed. The input image for each training example is loaded onto the input layer as the network is trained real-time. Simultaneously, the thickness and color of each edge and node border is changed. However, since the changes are so small, they are difficult to see. The changes are also displayed in each node's tooltip and heatmap.
+        <p class=display'>The neural network is trained on the MNIST dataset to recognize hand-written digits. The network has 784 input neurons with activations loaded from 28x28 images, 30 neurons in 1 hidden layer, and 10 output neurons representing numbers 0 through 9.
+        <p class='display'>As the visualization is ran, the training process is displayed. The input image for each training example is loaded onto the input layer as the network is trained real-time. Simultaneously, the thickness and color of each edge and node border is changed. However, since the changes are so small, they are difficult to see. The changes are also displayed in each node's tooltip and heatmap.
         ">Description</button>
         <button class="btn btn-info popoverButton" type="button" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="focus" data-bs-html='true' data-bs-content="
-        <p>Learning Rate = 3.0%
-        <p>Mini-batch Size = 30
-        <p>Activation function: Sigmoid
-        <p>Learning method: Stochastic Gradient Descent
-        <p>Training Examples per Epoch: 4000
-        <p>Test Examples: 800
-        <p>For the output layer, pixel significances are calculated by taking the weighted average of each hidden layer heatmap, where the heatmap's weight is the weight between the hidden layer neuron that corresponds to the heatmap and the output neuron.
+        <p class='display'>Learning Rate = 3.0%
+        <p class='display'>Mini-batch Size = 30
+        <p class='display'>Activation function: Sigmoid
+        <p class='display'>Learning method: Stochastic Gradient Descent
+        <p class='display'>Training Examples per Epoch: 4000
+        <p class='display'>Test Examples: 800
+        <p class='display'>For the output layer, pixel significances are calculated by taking the weighted average of each hidden layer heatmap, where the heatmap's weight is the weight between the hidden layer neuron that corresponds to the heatmap and the output neuron.
         ">Network specifications</button>
         <div id="controls">
           <button type="button" id="slowDown" class="btn btn-outline-secondary custom-btn"><i class="fas fa-fast-backward"></i></button>
@@ -55,11 +55,11 @@
         </div>
         <div class="col-4 p-4">
           <div id="dataColumn" class="col-md-12">
-            <p id="epoch">Epoch: 0</p>
-            <p id="trainingExamplesSeen">Training examples seen: 0</p>
-            <p id="accuracy">Accuracy = </p>
-            <div id="lossFunctionGraph">Click the play button to see cool stuff happen!</div>
-            <div id="attributionMap">Hover or click on a node to see more cool stuff happen!</div>
+            <p id="epoch" class="display">Epoch: 0</p>
+            <p id="trainingExamplesSeen" class="display">Training examples seen: 0</p>
+            <p id="accuracy" class="display">Accuracy = </p>
+            <div id="lossFunctionGraph"><p class="display">Click the play button to see cool stuff happen!</p></div>
+            <div id="attributionMap"><p class="display">Hover or click on a node to see more cool stuff happen!</p></div>
           </div>
         </div>
       </div>
