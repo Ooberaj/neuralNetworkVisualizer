@@ -1,3 +1,20 @@
+.container-lg.px-3.my-5.markdown-body{
+  margin: 0 0 0 0 !important;
+  padding: 0 0 0 0 !important;
+}
+
+h1{
+  display: none;
+}
+
+p{
+  display: none;
+}
+
+.display{
+  display: block;
+}
+
 .container.custom-container{
   margin-left: 0;
   margin-right: 0;
@@ -47,4 +64,3 @@ body{
   font-weight: 400;
   padding: .375rem .75rem;
 }
-
