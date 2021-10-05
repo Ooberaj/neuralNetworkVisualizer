@@ -1,4 +1,4 @@
 # neuralNetworkVisualizer
-The visualization's neural network is trained on the MNIST dataset to recognize hand-written digits. The network has 784 input neurons with activations loaded from 28x28 images, 30 neurons in 1 hidden layer, and 10 output neurons representing numbers 0 through 9.
+The website displays a network consisting of nodes and edges. As the neural network trains on the MNIST handwritten digit dataset in real-time, the displayed network is dynamically updated such that it models changes in the neural network. The site also displays a line plot that tracks error over the training process and heatmaps that display each pixel’s impact on the selected neuron.
 
-The input image for each training example is loaded onto the input layer as the network is trained real-time. Simultaneously, the thickness and color of each edge and node border is changed. Border thickness and color are used to represent biases while edge thickness and color are used to represent weights. These changes are also displayed in each node's tooltip and heatmap.
+The Multilayer Perceptron(MLP) used in the site was implemented from scratch in Javascript(based on Michael Nielsen's implementation in Neural Networks and Deep Learning) and uses stochastic gradient descent as well as minibatching.
